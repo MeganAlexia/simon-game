@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { GameHandlerService } from '../../game-handler/game-handler.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -11,9 +10,9 @@ export class ButtonComponent {
   @Input() id: number;
   @Input() disabled: boolean;
 
-  constructor(private gameHandlerService: GameHandlerService) {}
+  @Output() change: EventEmitter<number> = new EventEmitter<number>();
 
   onClick(value): void {
-    this.gameHandlerService.handleChange(value);
+    this.change.emit(value);
   }
 }

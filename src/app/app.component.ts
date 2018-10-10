@@ -16,4 +16,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.buttons = BUTTONS;
   }
+
+  public onButtonClicked(value) {
+    this.gameHandlerService.handleChange(value);
+  }
 }

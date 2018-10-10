@@ -1,10 +1,11 @@
-<app-scoreboard score={{gameHandlerService.score}} level={{gameHandlerService.level}}></app-scoreboard>
+<app-scoreboard [score]="gameHandlerService.score" [level]="gameHandlerService.level"></app-scoreboard>
 <div class="app">
   <app-button *ngFor="let button of buttons"
-              id={{button.id}}
-              color={{button.color}}
-              disabled={{gameHandlerService.disabledButton}}
+              [id]="button.id"
+              [color]="button.color"
+              [disabled]="gameHandlerService.disabledButton"
+              (change)="onButtonClicked($event)"
   >
   </app-button>
 </div>
-<app-start disabled={{gameHandlerService.disabledStart}}></app-start>
+<app-start [disabled]="gameHandlerService.disabledStart"></app-start>
