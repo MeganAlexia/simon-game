@@ -1,0 +1,11 @@
+.app {
+  height: calc(100% - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+app-start {
+  display: flex;
+  justify-content: center;
+}
