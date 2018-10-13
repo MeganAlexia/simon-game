@@ -29,16 +29,6 @@ export class GameHandlerService {
     
     // TODO add success popin instead of console log
 
-    if (end) {
-      console.log('you win');
-      // user win
-      this.level += 1;
-      this.score += 10;
-      this.iterations += 1;
-      this.cleanLayout();
-      return;
-    }
-
     if (!equal) {
       console.log('you loose');
       this.iterations = 1;
@@ -49,6 +39,17 @@ export class GameHandlerService {
     } else {
       this.advancement = this.advancement + 1;
     }
+
+    if (end) {
+      console.log('you win');
+      // user win
+      this.level += 1;
+      this.score += 10;
+      this.iterations += 1;
+      this.cleanLayout();
+      return;
+    }
+
   }
 
   private cleanLayout() {
